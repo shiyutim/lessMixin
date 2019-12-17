@@ -9,10 +9,6 @@
 - 已经定义好的样式，像函数一样传入参数就可以使用。
 - 省去繁琐的浏览器前缀，`lessMixin`已经为您定义好了前缀。
 
-## Usage
-
-直接把 src/common 目录下的`Less`文件夹放入项目，然后引入`Less/le_index.less`文件即可。
-
 ## important
 
 1. 指定参数
@@ -21,7 +17,7 @@
    - 第二个参数为空的时候，需要**直接省略不写**
    - 指定参数的时候，每个参数结尾最好使用`;`的形式。
 
-## mixin list
+## Use
 
 - .le_wh
 
@@ -445,5 +441,143 @@ div {
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
+}
+```
+
+- le_relative
+
+relative 代表 `position: relative`，默认参数为`position: relative`。
+
+**Example**
+
+```javascript
+// 默认不传参
+div {
+ .le_relative();
+}
+
+result:
+
+div {
+    position: relative;
+}
+
+// 传入一个参数 `top`
+
+div {
+    .le_relative(10px);
+}
+
+result:
+
+div {
+    position: relative;
+    top: 10px;
+}
+
+// 传入两个参数 `top; right`
+
+    // 两个参数全传入
+div {
+    .le_relative(20px; 50px);
+}
+
+result:
+
+div {
+    position: relative;
+    top: 20px;
+    right: 50px;
+}
+
+    // 只传入第二个参数 `right`
+    // 第一个参数为`none`
+
+div {
+    .le_relative(none; 10px);
+}
+
+result:
+
+div {
+    position: relative;
+    right: 10px;
+}
+
+// 传入三个参数 中间不穿参数为`none`即可
+
+div {
+    .le_relative(10px; 11px; 12px);
+}
+
+result:
+
+div {
+    position: relative;
+    top: 10px;
+    right: 11px;
+    bottom: 12px;
+}
+
+// 传入四个参数 中间不穿参数为`none`即可
+
+div {
+    .le_relative(10px; 11px; 12px; 13px);
+}
+
+result:
+
+div {
+    position: relative;
+    top: 10px;
+    right: 11px;
+    bottom: 12px;
+    left: 13px;
+}
+```
+
+- le_relative_tl
+
+relative_tl 代表 `position: relative; top; left;`, 没有默认参数。**不推荐第一个参数传入`none`，如果这样不如使用`le_relative(none; 10px)`**
+
+**Example**
+
+```javascript
+// 传入两个参数 `top` `left`
+
+
+div {
+    .le_relative_tl(10px; 11px);
+}
+
+result:
+
+div {
+    position: relative;
+    top: 10px;
+    left: 11px;
+}
+```
+
+- le_relative_zero
+
+relative_zero 代表 `position: relative; top; right; bottom ; left，默认参数都为 0。
+
+**Example**
+
+```javascript
+// 不用传入参数
+div {
+    .le_relative_zero();
+}
+
+result:
+
+div {
+position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 ```
