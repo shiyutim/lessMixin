@@ -4,6 +4,8 @@
 
 ## 这是一个自用的 css-less mixin 库
 
+在你的项目里面放入`Less`文件夹即可。文件内引入：`@import url('./Less/le_index');`
+
 ## useful
 
 - 已经定义好的样式，像函数一样传入参数就可以使用。
@@ -17,9 +19,23 @@
    - 第二个参数为空的时候，需要**直接省略不写**
    - 指定参数的时候，每个参数结尾最好使用`;`的形式。
 
+## Nav
+
+- [.le_wh](#.le_wh)
+- [.le_sw](#.le_sw)
+- [.le_cb](#.le_cb)
+- [.le_square](#.le_square)
+- [.le_square](#.le_circle)
+- [.le_shadow/le_shadow_inset](#.le_shadow/le_shadow_inset)
+- [.le_border](#.le_border)
+- [.le_flex](#.le_flex)
+- [.le_relative](#.le_relative)
+- [.le_relative_tl](#.le_relative_tl)
+- [.le_relative_zero](#.le_relative_zero)
+
 ## Use
 
-- .le_wh
+### .le_wh
 
 wh 代表`width`和`height`
 
@@ -64,7 +80,7 @@ div {
 }
 ```
 
-- .le_sw
+### .le_sw
 
 sw 代表`size`和`weight`
 
@@ -108,7 +124,7 @@ div {
 }
 ```
 
-- .le_cb
+### .le_cb
 
 cb 代表`color`和`background-color`
 
@@ -173,7 +189,7 @@ div {
 
 ```
 
-- le_square
+### .le_square
 
 square 代表`height`和`width`。描述一个*正方形*。默认为`100px`。
 
@@ -204,7 +220,7 @@ div {
  }
 ```
 
-- le_circle
+### .le_circle
 
 square 代表`height`、`width`和`border-radius`。描述一个*圆形*。默认为`100px`。
 
@@ -235,8 +251,9 @@ div {
  }
 ```
 
-- le_shadow / le_shadow_inset
-  shadow 代表 `box-shadow`，默认阴影为*外阴影*，参数为`0px 2px 4px rgba(0, 0, 0, 0.12)`。
+### .le_shadow/le_shadow_inset
+
+shadow 代表 `box-shadow`，默认阴影为*外阴影*，参数为`0px 2px 4px rgba(0, 0, 0, 0.12)`。
 
 shadow_inset 代表`box-shadow`，默认阴影为*内阴影*，参数为`inset 0px 2px 4px rgba(0, 0, 0, 0.12)`。
 
@@ -295,7 +312,7 @@ div {
 
 ```
 
-- le_border
+### .le_border
 
 border 代表 `border`，默认参数为`1px solid rgba(0, 0, 0, .1)`。
 
@@ -370,7 +387,7 @@ div {
 }
 ```
 
-- le_flex
+### .le_flex
 
 flex 代表 `flex`，默认参数为`display: flex;`。
 
@@ -444,7 +461,7 @@ div {
 }
 ```
 
-- le_relative
+### .le_relative
 
 relative 代表 `position: relative`，默认参数为`position: relative`。
 
@@ -536,7 +553,7 @@ div {
 }
 ```
 
-- le_relative_tl
+### .le_relative_tl
 
 relative_tl 代表 `position: relative; top; left;`, 没有默认参数。**不推荐第一个参数传入`none`，如果这样不如使用`le_relative(none; 10px)`**
 
@@ -559,7 +576,7 @@ div {
 }
 ```
 
-- le_relative_zero
+### .le_relative_zero
 
 relative_zero 代表 `position: relative; top; right; bottom ; left，默认参数都为 0。
 
