@@ -2,9 +2,12 @@
 
 > a less mixin library
 
-## 这是一个自用的 css-less mixin 库
+这是一个自用的 css-less mixin 库
 
-在你的项目里面放入`Less`文件夹即可。文件内引入：`@import url('./Less/le_index');`
+## 使用
+
+1. 把`Less`文件夹放入你的项目里面即可。
+2. 文件内引入：`@import url('./Less/le_index');`（目录层级由你引入的文件相对应）
 
 ## useful
 
@@ -21,21 +24,22 @@
 
 ## Nav
 
-- [.le_wh](#.le_wh)
-- [.le_sw](#.le_sw)
-- [.le_cb](#.le_cb)
-- [.le_square](#.le_square)
-- [.le_square](#.le_circle)
-- [.le_shadow/le_shadow_inset](#.le_shadow/le_shadow_inset)
-- [.le_border](#.le_border)
-- [.le_flex](#.le_flex)
-- [.le_relative](#.le_relative)
-- [.le_relative_tl](#.le_relative_tl)
-- [.le_relative_zero](#.le_relative_zero)
+- [.le_wh](#le_wh)
+- [.le_sw](#le_sw)
+- [.le_cb](#le_cb)
+- [.le_square](#le_square)
+- [.le_square](#le_circle)
+- [.le_shadow/le_shadow_inset](#le_shadow/le_shadow_inset)
+- [.le_border](#le_border)
+- [.le_flex](#le_flex)
+- [.le_relative](#le_relative)
+- [.le_relative_tl](#le_relative_tl)
+- [.le_relative_zero](#le_relative_zero)
+- [.le_btn](#le_btn)
 
 ## Use
 
-### .le_wh
+### le_wh
 
 wh 代表`width`和`height`
 
@@ -80,7 +84,7 @@ div {
 }
 ```
 
-### .le_sw
+### le_sw
 
 sw 代表`size`和`weight`
 
@@ -124,7 +128,7 @@ div {
 }
 ```
 
-### .le_cb
+### le_cb
 
 cb 代表`color`和`background-color`
 
@@ -189,7 +193,7 @@ div {
 
 ```
 
-### .le_square
+### le_square
 
 square 代表`height`和`width`。描述一个*正方形*。默认为`100px`。
 
@@ -220,7 +224,7 @@ div {
  }
 ```
 
-### .le_circle
+### le_circle
 
 square 代表`height`、`width`和`border-radius`。描述一个*圆形*。默认为`100px`。
 
@@ -251,7 +255,7 @@ div {
  }
 ```
 
-### .le_shadow/le_shadow_inset
+### le_shadow/le_shadow_inset
 
 shadow 代表 `box-shadow`，默认阴影为*外阴影*，参数为`0px 2px 4px rgba(0, 0, 0, 0.12)`。
 
@@ -312,7 +316,7 @@ div {
 
 ```
 
-### .le_border
+### le_border
 
 border 代表 `border`，默认参数为`1px solid rgba(0, 0, 0, .1)`。
 
@@ -387,7 +391,7 @@ div {
 }
 ```
 
-### .le_flex
+### le_flex
 
 flex 代表 `flex`，默认参数为`display: flex;`。
 
@@ -461,7 +465,7 @@ div {
 }
 ```
 
-### .le_relative
+### le_relative
 
 relative 代表 `position: relative`，默认参数为`position: relative`。
 
@@ -553,7 +557,7 @@ div {
 }
 ```
 
-### .le_relative_tl
+### le_relative_tl
 
 relative_tl 代表 `position: relative; top; left;`, 没有默认参数。**不推荐第一个参数传入`none`，如果这样不如使用`le_relative(none; 10px)`**
 
@@ -576,7 +580,7 @@ div {
 }
 ```
 
-### .le_relative_zero
+### le_relative_zero
 
 relative_zero 代表 `position: relative; top; right; bottom ; left，默认参数都为 0。
 
@@ -596,5 +600,56 @@ position: relative;
     right: 0;
     bottom: 0;
     left: 0;
+}
+```
+
+### le_btn
+
+btn 代表 button。可选的值有( primary | success | danger | warning)。**传入非选值**，默认显示为`primary`。
+
+**Example**
+
+```javascript
+// 不传参数
+button {
+    .le_btn();
+}
+
+result:
+
+button {
+    width: 100px;
+    height: 42px;
+    line-height: 42px;
+    position: relative;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #ebedf0;
+    outline: none;
+    cursor: pointer;
+}
+
+// 传入参数
+button {
+    .le_btn(primary);
+}
+
+result:
+
+button {
+    width: 100px;
+    height: 42px;
+    line-height: 42px;
+    position: relative;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #ebedf0;
+    outline: none;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
 }
 ```

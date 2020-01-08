@@ -1,0 +1,128 @@
+@import './le_flex.less';
+@import './le_relative.less';
+@import './le_absolute.less';
+@import './le_fixed.less';
+@import './le_btn.less';
+
+// wh: width height
+
+.le_wh(@width) {
+  width: @width;
+}
+
+.le_wh(@width; @height) when(@width =none) {
+  height: @height;
+}
+
+.le_wh(@width; @height) when not (@width =none) {
+  width: @width;
+  height: @height;
+}
+
+
+
+// cs: color size
+.le_cs(@color) {
+  color: @color;
+}
+
+.le_cs(@color; @size) when(@color =none) {
+  font-size: @size;
+}
+
+.le_cs(@color; @size) when not (@color =none) {
+  color: @color;
+  font-size: @size;
+}
+
+
+
+// sw: size weight
+
+.le_sw(@size) {
+  font-size: @size;
+}
+
+.le_sw(@size; @weight) when(@size =none) {
+  font-weight: @weight;
+}
+
+.le_sw(@size; @weight) when not (@size =none) {
+  font-size: @size;
+  font-weight: @weight;
+}
+
+
+
+// cb: color backgroundColor
+
+.le_cb(@color) {
+  color: @color;
+}
+
+.le_cb(@color; @bgColor) when(@color =none) {
+  background-color: @bgColor;
+}
+
+.le_cb(@color; @bgColor) when not (@color =none) {
+  color: @color;
+  background-color: @bgColor;
+}
+
+
+
+// zero: margin padding
+
+.le_zero () {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+// square: width height
+
+.le_square(@size: 100px) {
+  height: @size;
+  width: @size;
+}
+
+
+
+// circle: width height border-radius
+
+.le_circle(@size) {
+  height: @size;
+  width: @size;
+  border-radius: 50%;
+}
+
+.le_circle(@size: 100px) {
+  height: @size;
+  width: @size;
+  border-radius: 50%;
+}
+
+
+
+// shadow: box-shadow
+
+.le_shadow(@h-shadow: 0px; @v-shadow: 2px; @blur: 4px; @color: rgba(0, 0, 0, .12)) {
+  box-shadow: @arguments ;
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+}
+
+.le_shadow_inset(@h-shadow: 0px; @v-shadow: 2px; @blur: 4px; @color: rgba(0, 0, 0, .12)) {
+  box-shadow: inset @arguments;
+  -webkit-box-shadow: inset @arguments;
+  -moz-box-shadow: inset @arguments;
+}
+
+
+
+// border: border
+
+.le_border(@width: 1px; @style: solid; @color: rgba(0, 0, 0, .1)) {
+  border: @arguments;
+}

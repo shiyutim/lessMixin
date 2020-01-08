@@ -1,13 +1,11 @@
 <template>
-  <div class="container">
-    <h1>Template</h1>
-  </div>
+  <div class="container"></div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {}
+  data() {
+    return {};
   },
   props: {
     prop: {
@@ -21,13 +19,14 @@ export default {
   methods: {
     // type your function
   },
-  created () {},
-  mounted () {},
-  updated () {},
-  destroyed () {},
+  created() {},
+  mounted() {},
+  updated() {},
+  destroyed() {},
   filters: {}
-}
+};
 </script>
 
-<style scoped lang=''>
+<style scoped lang="less">
+@import url("../../common/Less/le_index");
 </style>

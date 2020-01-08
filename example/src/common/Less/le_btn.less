@@ -1,0 +1,46 @@
+@import url('./le_index');
+
+.le_btn() {
+  .le_wh(100px; 42px);
+  line-height: 42px;
+  position: relative;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ebedf0;
+  outline: none;
+  cursor: pointer;
+
+  &:active::before {
+    .le_absolute_zero();
+    .le_wh(100%; 100%);
+    content: '';
+    transition: all 0.2s;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+.le_btn(@color) {
+  .le_btn();
+  background-color: #3498db;
+  color: #fff;
+}
+
+.le_btn(@color) when(@color =warning) {
+  .le_btn();
+  background-color: #f6b93b;
+  color: #fff;
+}
+
+.le_btn(@color) when(@color =danger) {
+  .le_btn();
+  background-color: #eb2f06;
+  color: #fff;
+}
+
+.le_btn(@color) when(@color =success) {
+  .le_btn();
+  background-color: #44bd32;
+  color: #fff;
+}
